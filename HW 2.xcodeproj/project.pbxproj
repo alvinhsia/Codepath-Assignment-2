@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		861633B41C6C6D0E0076E3C1 /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861633B31C6C6D0E0076E3C1 /* ConversationsViewController.swift */; };
+		861633B61C6C70910076E3C1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861633B51C6C70910076E3C1 /* SettingsViewController.swift */; };
 		8628DD951C6C65AD00B91D24 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628DD941C6C65AD00B91D24 /* TimelineViewController.swift */; };
 		867371281C6AECC700355070 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867371271C6AECC700355070 /* AppDelegate.swift */; };
 		8673712A1C6AECC700355070 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867371291C6AECC700355070 /* ViewController.swift */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		861633B31C6C6D0E0076E3C1 /* ConversationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
+		861633B51C6C70910076E3C1 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8628DD941C6C65AD00B91D24 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		867371241C6AECC700355070 /* HW 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HW 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		867371271C6AECC700355070 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +91,8 @@
 		8628DD931C6C59F300B91D24 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				861633B51C6C70910076E3C1 /* SettingsViewController.swift */,
+				861633B31C6C6D0E0076E3C1 /* ConversationsViewController.swift */,
 				8628DD941C6C65AD00B91D24 /* TimelineViewController.swift */,
 				8673715B1C6B09E300355070 /* TutorialViewController.swift */,
 				867371591C6AF07B00355070 /* LoginViewController.swift */,
@@ -285,10 +291,12 @@
 				8673712A1C6AECC700355070 /* ViewController.swift in Sources */,
 				867371561C6AEDD600355070 /* Common.swift in Sources */,
 				867371281C6AECC700355070 /* AppDelegate.swift in Sources */,
+				861633B41C6C6D0E0076E3C1 /* ConversationsViewController.swift in Sources */,
 				8673715A1C6AF07B00355070 /* LoginViewController.swift in Sources */,
 				8628DD951C6C65AD00B91D24 /* TimelineViewController.swift in Sources */,
 				8673715C1C6B09E300355070 /* TutorialViewController.swift in Sources */,
 				867371581C6AEE9800355070 /* IntroViewController.swift in Sources */,
+				861633B61C6C70910076E3C1 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

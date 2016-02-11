@@ -1,5 +1,5 @@
 //
-//  TimelineViewController.swift
+//  ConversationsViewController.swift
 //  HW 2
 //
 //  Created by Alvin Hsia on 2/10/16.
@@ -8,18 +8,24 @@
 
 import UIKit
 
-class TimelineViewController: UIViewController {
-    
-    @IBOutlet weak var timelineScrollView: UIScrollView!
-    
+class ConversationsViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        timelineScrollView.contentSize = CGSize(width: 320, height: 1564)
-        
     }
+    
+    @IBAction func onBackTap(sender: AnyObject) {
+        navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
+    
+    
+    
+    
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

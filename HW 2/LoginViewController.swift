@@ -20,8 +20,11 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
     var buttonInitialY: CGFloat!
     var buttonOffset: CGFloat!
     
-    // create an alert controller
-    let alertController = UIAlertController(title: "Invalid Email or Password", message: "Please try again.", preferredStyle: .Alert)
+    // create error alert controller
+    let emptyAlertController = UIAlertController(title: "Both Fields Required", message: "Please fill out both your email address and password.", preferredStyle: .Alert)
+    
+    // create error alert controller
+    let errorAlertController = UIAlertController(title: "Invalid Email or Password", message: "Please try again.", preferredStyle: .Alert)
 
     // create a cancel action
     let cancelAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
@@ -44,8 +47,9 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
         buttonInitialY = buttonParentView.frame.origin.y
         buttonOffset = -230
         
-        // add the cancel action to the alertController
-        alertController.addAction(cancelAction)
+        // add the cancel action to the AlertControllers
+        errorAlertController.addAction(cancelAction)
+        emptyAlertController.addAction(cancelAction)
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
@@ -86,27 +90,29 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
     
     @IBAction func onLoginTap(sender: AnyObject) {
         
-        // animate indicator on tap
-        loginIndicator.startAnimating()
-        
-//        // progamatically create tutorial VC
-//        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//        let tutorialVC = mainStoryboard.instantiateViewControllerWithIdentifier("tutorialVC") as! TutorialViewController
-        
-        // delay for indicator animation
-        delay(2) {
-            
-            // modal segue to tutorial if fields are filled
-            if !self.emailField.text!.isEmpty && !self.passwordField.text!.isEmpty {
-                self.performSegueWithIdentifier("loginModalSegue", sender: self)
-            }
-            
-            // show error alert if empty
-            if self.emailField.text!.isEmpty || self.passwordField.text!.isEmpty {
-                self.presentViewController(self.alertController, animated: true, completion: nil);
-            }
+        // check if fields are empty
+        if self.emailField.text!.isEmpty || self.passwordField.text!.isEmpty {
+            self.presentViewController(self.emptyAlertController, animated: true, completion: nil);
         }
         
+        else {
+            // animate indicator on tap
+            loginIndicator.startAnimating()
+            
+            // delay for indicator animation
+            delay(2) {
+                
+                // modal segue to tutorial if fields are filled
+                if self.emailField.text! == "ah" && self.passwordField.text! == "ah" {
+                    self.performSegueWithIdentifier("loginModalSegue", sender: self)
+                }
+                
+                // show error alert if wrong credentials
+                else {
+                    self.presentViewController(self.errorAlertController, animated: true, completion: nil);
+                }
+            }
+        }
     }
     
     
