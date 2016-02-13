@@ -12,21 +12,7 @@ class SettingsViewController: UIViewController, UIActionSheetDelegate {
 
     @IBOutlet weak var settingsScrollView: UIScrollView!
     @IBOutlet weak var settingsImageView: UIImageView!
-    
-    // Create logout action sheet
-    let signoutAlertController = UIAlertController(title: "", message: "Are you sure you want to sign out?", preferredStyle: .ActionSheet)
-    
-    // Create logout action
-    let logoutAction = UIAlertAction(title: "Sign Out", style: .Destructive) { (action) in
 
-            // handle case of user logging out
-        performSegueWithIdentifier("signoutModalSegue")
-    }
-    
-    // Create cancel action
-    let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
-        // handle cancel response here. Doing nothing will dismiss the view.
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,9 +20,6 @@ class SettingsViewController: UIViewController, UIActionSheetDelegate {
         // Do any additional setup after loading the view.
         
         settingsScrollView.contentSize = settingsImageView.image!.size
-        
-        signoutAlertController.addAction(cancelAction)
-        signoutAlertController.addAction(logoutAction)
     }
 
     @IBAction func onClose(sender: UIButton) {
@@ -45,6 +28,24 @@ class SettingsViewController: UIViewController, UIActionSheetDelegate {
 
     
     @IBAction func onSignOut(sender: AnyObject) {
+        
+        // Create logout action sheet
+        let signoutAlertController = UIAlertController(title: "", message: "Are you sure you want to sign out?", preferredStyle: .ActionSheet)
+        
+        // Create logout action
+        let logoutAction = UIAlertAction(title: "Sign Out", style: .Destructive) { (action) in
+            self.performSegueWithIdentifier("signoutModalSegue", sender: nil)
+        }
+        
+        // Create cancel action
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+            // handle cancel response here. Doing nothing will dismiss the view.
+        }
+        
+        signoutAlertController.addAction(cancelAction)
+        signoutAlertController.addAction(logoutAction)
+        // handle case of user logging out
+        
         presentViewController(signoutAlertController, animated: true, completion: nil)
     }
     
