@@ -23,6 +23,7 @@ If the credentials are correct, user sees a loading indicator for 2 seconds foll
 Optional:
 - [x] When the keyboard is visible, if the user pulls down on the scrollview, it will dismiss the keyboard.
 - [x] User can page between the screens with updated dots
+- [x] Display an ActionSheet for sign out
 
 Notes:
 
