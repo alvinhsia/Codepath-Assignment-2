@@ -1,4 +1,4 @@
-# Codepath HW 1
+# Codepath HW 2
 Dropbox: Navigation
 
 Time spent: ~4 hours
@@ -25,6 +25,5 @@ Optional:
 - [x] User can page between the screens with updated dots
 
 Notes:
-- 
 
 GIF:
