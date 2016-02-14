@@ -26,4 +26,5 @@ Optional:
 - [x] Display an ActionSheet for sign out
 
 GIF:
+
 ![codepath hw 2](https://cloud.githubusercontent.com/assets/1860265/13035397/ee207afe-d303-11e5-812f-35723999b052.gif)
